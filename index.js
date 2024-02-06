@@ -148,7 +148,7 @@ const mint = async (pass) => {
 
         const { start_time, name } = mint_groups[mint_groups.length - 1]
 
-        for (const aa of listWallet.slice(0, 1)) {
+        for (const aa of listWallet) {
             try {
                 retry(() => mintPerWallet(name, contract)(aa), 4)
             }
@@ -166,7 +166,7 @@ const mint = async (pass) => {
         const timeStart = start_time * 1000
         console.log("🦅 ~ timeStart:", timeStart)
         setTimeout(() => {
-            for (const aa of listWallet.slice(0, 1)) {
+            for (const aa of listWallet) {
                 try {
                     retry(() => mintPerWallet(name, contract)(aa), 4)
                 }
